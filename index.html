@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <head>
-<title>Zodiac Solutions WEB AR Sneakers</title>
+<title>Zodiac Solutions WEB AR</title>
 <!-- Augmented Reality on the Web in 10 lines of html! https://github.com/jeromeetienne/ar.js -->
 <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
 <script src="https://raw.githack.com/jeromeetienne/AR.js/2.0.5/aframe/build/aframe-ar.js"></script>
 <script src="https://raw.githack.com/brickhawkins/aframe-ar/master/lib/aframe-gif-shader.js"></script>
 </head>
-
+<h1 style="background-color:DodgerBlue;">All sneakers</h1>
 <body style='margin : 0px; overflow: hidden;'>
-	<h1 style="background-color:DodgerBlue;">All sneakers</h1>
-	<a-scene vr-mode-ui="enabled: false" stats='false' embedded arjs='sourceType: webcam; debugUIEnabled: false;'>
+	<a-scene vr-mode-ui="enabled: false" stats='true' embedded arjs='sourceType: webcam; debugUIEnabled: true;'>
 		<a-assets>
 			<img id="gif1" src="gifs/sneakers.gif">
 			<img id="gif2" src="gifs/sneakers.gif">
