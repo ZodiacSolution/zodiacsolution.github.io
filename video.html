@@ -3,6 +3,83 @@
 <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
 <script src="https://raw.githack.com/jeromeetienne/AR.js/2.0.5/aframe/build/aframe-ar.js"></script>
 <script src="https://raw.githack.com/brickhawkins/aframe-ar/master/lib/aframe-gif-shader.js"></script>
+<script>
+    AFRAME.registerComponent('handler1', {
+        init: function() {
+            this.toggle = false;
+            this.vid = document.querySelector("#vid1");
+            this.vid.pause();
+        },
+        tick: function() {
+            if (this.el.object3D.visible == true) {
+                if (!this.toggle) {
+                    this.toggle = true;
+                    this.vid.play();
+                }
+            } else {
+                this.toggle = false;
+                this.vid.pause();
+            }
+        }
+    });
+	
+	AFRAME.registerComponent('handler2', {
+        init: function() {
+            this.toggle = false;
+            this.vid = document.querySelector("#vid2");
+            this.vid.pause();
+        },
+        tick: function() {
+            if (this.el.object3D.visible == true) {
+                if (!this.toggle) {
+                    this.toggle = true;
+                    this.vid.play();
+                }
+            } else {
+                this.toggle = false;
+                this.vid.pause();
+            }
+        }
+    });
+	
+	AFRAME.registerComponent('handler3', {
+        init: function() {
+            this.toggle = false;
+            this.vid = document.querySelector("#vid3");
+            this.vid.pause();
+        },
+        tick: function() {
+            if (this.el.object3D.visible == true) {
+                if (!this.toggle) {
+                    this.toggle = true;
+                    this.vid.play();
+                }
+            } else {
+                this.toggle = false;
+                this.vid.pause();
+            }
+        }
+    });
+	
+	AFRAME.registerComponent('handler4', {
+        init: function() {
+            this.toggle = false;
+            this.vid = document.querySelector("#vid4");
+            this.vid.pause();
+        },
+        tick: function() {
+            if (this.el.object3D.visible == true) {
+                if (!this.toggle) {
+                    this.toggle = true;
+                    this.vid.play();
+                }
+            } else {
+                this.toggle = false;
+                this.vid.pause();
+            }
+        }
+    });
+</script>
 </head>
 
 <body style='margin : 0px; overflow: hidden;'>
@@ -28,17 +105,17 @@
            			<h3>Error : Your browser does not support.</h3>
         		</video>
   		</a-assets>
-  	<a-marker crossorigin="anonymous" preset='custom' type='pattern' url='marker/marker1.patt'>
-		<a-video src="#vid1" width="4" height="4" position="0 1 -1"></a-video>
+  	<a-marker crossorigin="anonymous" preset='custom' type='pattern' url='marker/marker1.patt' handler1>
+		<a-video src="#vid1" width="4" height="4" rotation="-90 0 0" position="0 1 -1"></a-video>
   	</a-marker>
-	<a-marker crossorigin="anonymous" preset='custom' type='pattern' url='marker/marker2.patt'>
-		<a-video src="#vid2" width="4" height="4" position="0 1 -1"></a-video>
+	<a-marker crossorigin="anonymous" preset='custom' type='pattern' url='marker/marker2.patt' handler2>
+		<a-video src="#vid2" width="4" height="4" rotation="-90 0 0" position="0 1 -1"></a-video>
   	</a-marker>
-	<a-marker crossorigin="anonymous" preset='custom' type='pattern' url='marker/marker3.patt'>
-		<a-video src="#vid3" width="4" height="4" position="0 1 -1"></a-video>
+	<a-marker crossorigin="anonymous" preset='custom' type='pattern' url='marker/marker3.patt' handler3>
+		<a-video src="#vid3" width="4" height="4" rotation="-90 0 0" position="0 1 -1"></a-video>
   	</a-marker>
-	<a-marker crossorigin="anonymous" preset='custom' type='pattern' url='marker/marker4.patt'>
-		<a-video src="#vid4" width="4" height="4" position="0 1 -1"></a-video>
+	<a-marker crossorigin="anonymous" preset='custom' type='pattern' url='marker/marker4.patt' handler4>
+		<a-video src="#vid4" width="4" height="4" rotation="-90 0 0" position="0 1 -1"></a-video>
   	</a-marker>
   	<a-entity camera></a-entity>
 	</a-scene>
